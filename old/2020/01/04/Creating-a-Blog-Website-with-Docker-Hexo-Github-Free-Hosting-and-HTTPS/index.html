@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Creating a Blog/Website with Docker, Hexo &amp; Github, Free Hosting and HTTPS | spurin.com</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Blogging,Hexo,Docker,Github,Blog,Hosting,HTTPS,Website" />
+    
+    <meta name="description" content="Updated for 2020.  People often like to start a new year or even a new decade with a venture, blogging being particularly popular. I’ve updated this article originally written in 2019. The supporting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating a Blog&#x2F;Website with Docker, Hexo &amp; Github, Free Hosting and HTTPS">
+<meta property="og:url" content="http://spurin.com/2020/01/04/Creating-a-Blog-Website-with-Docker-Hexo-Github-Free-Hosting-and-HTTPS/index.html">
+<meta property="og:site_name" content="spurin.com">
+<meta property="og:description" content="Updated for 2020.  People often like to start a new year or even a new decade with a venture, blogging being particularly popular. I’ve updated this article originally written in 2019. The supporting">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://spurin.com/images/pasted-37.png">
+<meta property="article:published_time" content="2020-01-04T15:30:00.000Z">
+<meta property="article:modified_time" content="2020-01-04T15:13:03.000Z">
+<meta property="article:author" content="James Spurin">
+<meta property="article:tag" content="Blogging">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="Hosting">
+<meta property="article:tag" content="HTTPS">
+<meta property="article:tag" content="Website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://spurin.com/images/pasted-37.png">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Personal site for James Spurin</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <br>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Creating-a-Blog-Website-with-Docker-Hexo-Github-Free-Hosting-and-HTTPS" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Creating a Blog/Website with Docker, Hexo &amp; Github, Free Hosting and HTTPS
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2020/01/04/Creating-a-Blog-Website-with-Docker-Hexo-Github-Free-Hosting-and-HTTPS/" class="article-date">
+            <time datetime="2020-01-04T15:30:00.000Z" itemprop="datePublished">2020-01-04</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Blog/" rel="tag">Blog</a>, <a class="tag-link" href="/tags/Blogging/" rel="tag">Blogging</a>, <a class="tag-link" href="/tags/Docker/" rel="tag">Docker</a>, <a class="tag-link" href="/tags/Github/" rel="tag">Github</a>, <a class="tag-link" href="/tags/HTTPS/" rel="tag">HTTPS</a>, <a class="tag-link" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="tag-link" href="/tags/Hosting/" rel="tag">Hosting</a>, <a class="tag-link" href="/tags/Website/" rel="tag">Website</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/pasted-37.png" alt="Blogging away ... "></p>
+<p>Updated for 2020.  People often like to start a new year or even a new decade with a venture, blogging being particularly popular. I’ve updated this article originally written in 2019.</p>
+<p>The supporting container image used in this tutorial has been refactored and improved to handle persistency.  Deployment keys are part of the build process and the context has been simplified.  I hope you enjoy and find success in your goals :)</p>
+<h2 id="TL-DR…"><a href="#TL-DR…" class="headerlink" title="TL;DR…"></a>TL;DR…</h2><p>This is a tutorial on creating a blog or website using hexo.io (a static site generator), Docker and Github with your own custom domain and https, for the cost of your domain name only and a little bit of time.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>I wanted a convenient way of running sites, i.e. blogs and supporting sites for my projects, without a hosting service or server infrastructure like Wordpress, I also, wanted to keep this as cost effective as possible with free being an ideal.</p>
+<p>After comparing a multitude of offerings, I settled on the excellent <a href="https://hexo.io" target="_blank" rel="noopener">hexo.io</a> platform, <em>‘A fast, simple &amp; powerful blog framework’</em>.  The great thing about hexo, is that your blog/site is generated as a collection of static files.  You don’t need anything other than a decent web server to host your page and given that it’s a static site, it reduces security concerns significantly in comparison to other popular blogging platforms.</p>
+<p>With the use of hexo, you’ve also got a means that you can work on your blog locally, without internet connectivity.  If you’re like me and commute a lot, especially where there is intermittent wifi connectivity (London Underground), then this is particularly useful.</p>
+<p>The platform is built with node.js and subsequently, there are for it’s configuration, a variety of modules that need to be installed through npm.  Whilst this is not that difficult in itself, it is a process that can result in a lot of installation residual on ones system.  For this reason, we’re going to be using Docker to encapsulate the main blogging component that will run our system, keeping our own system shipshape and shiny.</p>
+<p>Github, offers a great solution for hosting sites with it’s pages.github.io service, all you need to have is a github account to make use of this.  You can even, configure the service to leverage your own domain name, with Github taking care of aspects like https for you for free.</p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>You will need to have the following -</p>
+<ul>
+<li>Docker installation.  Docker is available for Mac/Windows/Linux and is easily installed</li>
+<li>Domain Name (optional).  I will be using a domain name for my configuration.  If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in  this tutorial.  If you don’t have a domain name but wish to purchase one, <a href="name.com">name.com</a> is an excellent provider and fits in well with this tutorial</li>
+<li>Github account, sign up for free on github.com</li>
+</ul>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>In the subsequent sections, we will be covering the complete setup of <a href="https://masteringansible.com" target="_blank" rel="noopener">https://masteringansible.com</a>, a domain I will be using to support my online course on <a href="https://www.udemy.com/mastering-ansible-x/" target="_blank" rel="noopener">Mastering Ansible</a></p>
+<h2 id="Docker-Pull-the-spurin-hexo-Image"><a href="#Docker-Pull-the-spurin-hexo-Image" class="headerlink" title="Docker Pull the spurin/hexo Image"></a>Docker Pull the spurin/hexo Image</h2><p>On Docker Hub there is a pre-made image made by myself, containing the steps to install both Hexo and Hexo-Admin.  More details about the image can be reviewed <a href="https://hub.docker.com/r/spurin/hexo" target="_blank" rel="noopener">here</a>.  With docker installed, from a command prompt/terminal, issue the following command to pull the latest version of the image -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker pull spurin&#x2F;hexo</span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from spurin&#x2F;hexo</span><br><span class="line">804555ee0376: Pull complete</span><br><span class="line">2706bdf80250: Pull complete</span><br><span class="line">3a1861ab5a61: Pull complete</span><br><span class="line">2a2939395b29: Pull complete</span><br><span class="line">738ba111f3fd: Pull complete</span><br><span class="line">c32fd6850012: Pull complete</span><br><span class="line">d4c7abfc1ea7: Pull complete</span><br><span class="line">Digest: sha256:68df85373fa46d314b0fe1b8b278f8dc158342c711163b47fb4be780441b6fc6</span><br><span class="line">Status: Downloaded newer image for spurin&#x2F;hexo:latest</span><br><span class="line">docker.io&#x2F;spurin&#x2F;hexo:latest</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Create-a-container-for-your-site"><a href="#Create-a-container-for-your-site" class="headerlink" title="Create a container for your site"></a>Create a container for your site</h2><p>As we may have multiple sites, I like to give the running container a name that references the site that it relates too, so that I can easily see the container I wish to interact with.</p>
+<p>I also like to store the Docker volume that will relate to this, on Dropbox, so that I have a backup of my running configuration as most of my efforts in this space are performed on my personal laptop.</p>
+<p>The following example, assumes a domain name of masteringansible.com, with the local hexo server, running on port 4000.  The -v <em>‘/Users/james/Dropbox/James/Application\ Folders/docker/volumes/masteringansible.com’</em> is the path to where I will store the running configuration for the container.</p>
+<p>This command, creates a container for us using the customised spurin/hexo  image as a base -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker create --name&#x3D;hexo-masteringansible.com \</span><br><span class="line">-e HEXO_SERVER_PORT&#x3D;4001 \</span><br><span class="line">-e GIT_USER&#x3D;&quot;James Spurin&quot; \</span><br><span class="line">-e GIT_EMAIL&#x3D;&quot;james@abcdef.com&quot; \</span><br><span class="line">-v &#x2F;Users&#x2F;james&#x2F;Dropbox&#x2F;James&#x2F;Application\ Folders&#x2F;docker&#x2F;volumes&#x2F;masteringansible.com:&#x2F;app \</span><br><span class="line">-p 4001:4001 \</span><br><span class="line">spurin&#x2F;hexo</span><br></pre></td></tr></table></figure>
+
+<p>We can start the container and follow the logs.  When this runs for the first time, if a site does not exist in the target folder, one will be created (can take a while).  Subsequently, hexo-admin will be installed inside the site.  It will also create SSH keys for deployment, setup both github and gitlab as known_hosts and perform a gitconfig for your username and email -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker start hexo-masteringansible.com &amp;&amp; docker logs --follow hexo-masteringansible.com</span><br><span class="line">hexo-masteringansible.com</span><br><span class="line">***** App directory is empty, initialising with hexo and hexo-admin *****</span><br><span class="line">INFO  Cloning hexo-starter https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo-starter.git</span><br><span class="line">Cloning into &#39;&#x2F;app&#39;...</span><br><span class="line">Submodule &#39;themes&#x2F;landscape&#39; (https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo-theme-landscape.git) registered for path &#39;themes&#x2F;landscape&#39;</span><br><span class="line">Cloning into &#39;&#x2F;app&#x2F;themes&#x2F;landscape&#39;...</span><br><span class="line">Submodule path &#39;themes&#x2F;landscape&#39;: checked out &#39;73a23c51f8487cfcd7c6deec96ccc7543960d350&#39;</span><br><span class="line">INFO  Install dependencies</span><br><span class="line">yarn install v1.21.1</span><br><span class="line">info No lockfile found.</span><br><span class="line">[1&#x2F;4] Resolving packages...</span><br><span class="line">[2&#x2F;4] Fetching packages...</span><br><span class="line">&lt;snip&gt;</span><br><span class="line">***** App directory contains no requirements.txt file, continuing *****</span><br><span class="line">***** App .ssh directory is empty, initialising ssh key and configuring known_hosts for common git repositories (github&#x2F;gitlab) *****</span><br><span class="line">***** Running git config, user &#x3D; James Spurin, email &#x3D; james@abcdef.com *****</span><br><span class="line">***** Copying .ssh from App directory and setting permissions *****</span><br><span class="line">***** Contents of public ssh key (for deploy) - *****</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2z5BbOk241XaNTALIlcHDF57WHQTvfA+NV8T7Puw5wk0hZExIWNZt0zfqD8m1XYWUYRlQbCx1wUMGRGOCHq5NtXlzQmCiDkBULXgoofC+&#x2F;8trD0p8pwzCPW8BZ4&#x2F;agRDIExdnaMD2Wqd8VCg&#x2F;1&#x2F;Y09QM3k5roiXPy7ES4ZCp5QHCbBJ1EXWjpgfn50o5pbq64Mgnw05lsAVbFjtSHm6Th+tN0IXbUvXO0znRvDTEJ15cG7uf9pI1rstCzydK0mqYDrOyqWYk&#x2F;aroJpnoJGnbT0AKnVoo3c5IS4w1SSY33Ju6G82QMjFOrPqqQPM3dNBIQHb2crRN+VxKpLAjMojfr root@b3feb661344f</span><br><span class="line">***** Starting server on port 4001 *****</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4001 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>We can press Ctrl+C at this point without concern as we’re following the logs, the container is running in the background and thus our Ctrl+C stops the following of the logs, not the actual container.</p>
+<p>I’m performing this on my laptop so Docker is localhost, adjust the name/ip address accordingly if you’re running Docker elsewhere.  If you browse to <a href="http://localhost:4001" target="_blank" rel="noopener">http://localhost:4001</a>, you’ll be presented with a hexo starting page as follows -</p>
+<p><img src="/images/pasted-20.png" alt="Hexo with the Landscape theme"></p>
+<p>You can also, access the admin interface for hexo-admin at <a href="http://localhost:4001/admin" target="_blank" rel="noopener">http://localhost:4001/admin</a> -</p>
+<p><img src="/images/pasted-21.png" alt="Hexo-Admin"></p>
+<h2 id="Customising-the-Theme"><a href="#Customising-the-Theme" class="headerlink" title="Customising the Theme"></a>Customising the Theme</h2><p>This theme may suit your needs but personally, I am a big fan of the <a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">Hueman theme</a>.  The next steps cover the installation of this particular theme.</p>
+<p>Each theme will have their own requirements but this give an overall idea of the process.</p>
+<p>Execute a bash shell in the running container, giving you a prompt similar to the following -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker exec -it hexo-masteringansible.com bash</span><br><span class="line">root@b3feb661344f:&#x2F;app#</span><br></pre></td></tr></table></figure>
+
+<p>We will clone the theme from it’s source github repository, and whilst we’re in the shell, we’re going to rename the default configuration file to the expected name.  Although we’re doing this in the shell, we’re in the app volume so all changes here are persistent.  Technically, we could do this directly in the app volume on our local OS if that is more convenient -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@b3feb661344f:&#x2F;app# git clone https:&#x2F;&#x2F;github.com&#x2F;ppoffice&#x2F;hexo-theme-hueman.git themes&#x2F;hueman</span><br><span class="line">Cloning into &#39;themes&#x2F;hueman&#39;...</span><br><span class="line">remote: Enumerating objects: 1831, done.</span><br><span class="line">remote: Total 1831 (delta 0), reused 0 (delta 0), pack-reused 1831</span><br><span class="line">Receiving objects: 100% (1831&#x2F;1831), 5.55 MiB | 1.51 MiB&#x2F;s, done.</span><br><span class="line">Resolving deltas: 100% (935&#x2F;935), done.</span><br><span class="line">root@b3feb661344f:&#x2F;app#</span><br><span class="line"></span><br><span class="line">root@b3feb661344f:&#x2F;app# mv themes&#x2F;hueman&#x2F;_config.yml.example themes&#x2F;hueman&#x2F;_config.yml</span><br><span class="line">root@b3feb661344f:&#x2F;app# exit</span><br></pre></td></tr></table></figure>
+
+<p>The next change, is to our blog configuration file which again, is now accessible in two ways</p>
+<ol>
+<li>In the container under /app/_config.yml</li>
+<li>Outside of the container in the local directory, in my case this would be /Users/james/Dropbox/James/Application\ Folders/docker/volumes/masteringansible.com/_config.yml</li>
+</ol>
+<p>To reiterate, when we created the container, we specified the volume location so these files are accessible both inside the container (via an interactive shell) and outside of the container (via your filesystem).  If you wish to make changes inside the container using an editor like vim, you will need to install an editor as the container is built from a lightweight image that has no default editors (i.e. apt update &amp;&amp; apt -y install vim), n.b. this change is to the running container and won’t persist should the container be destroyed/recreated).</p>
+<p>Change the following context in _config.yml to use hueman as the theme -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: hueman</span><br></pre></td></tr></table></figure>
+
+<p>It is also worth setting the language to en, if you’re using English, I noticed that without this, my configuration defaulted to Dutch -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Hexo</span><br><span class="line">subtitle:</span><br><span class="line">description:</span><br><span class="line">keywords:</span><br><span class="line">author: John Doe</span><br><span class="line">language: en</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure>
+
+<p>After making these change, if you’re in the running container, exit and then restart the Docker container -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker restart hexo-masteringansible.com</span><br><span class="line">hexo-masteringansible.com</span><br></pre></td></tr></table></figure>
+
+<p>Wait for the server to start, checking the logs if necessary and then, accessing <a href="http://localhost:4001" target="_blank" rel="noopener">http://localhost:4001</a>, should now give you the site, with the hueman plugin enabled -</p>
+<p><img src="/images/pasted-22.png" alt="Hueman Theme"></p>
+<h2 id="Personalising-the-Page"><a href="#Personalising-the-Page" class="headerlink" title="Personalising the Page"></a>Personalising the Page</h2><p>Where desired you can personalise the page.  Pages/Posts can be added using the Admin interface and changes can be made to both _config.yml and themes/hueman/_config.yml for Hexo and the Hueman theme respectively.</p>
+<p>We’re not going to cover this aspect in detail but should you wish to do so before continuing, now is a good time to try out the platform.</p>
+<p>For my own site, masteringansible.com, I performed the following changes as a starter guide.</p>
+<p>Updated _config.yml with the following -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: MasteringAnsible.com</span><br><span class="line">subtitle:</span><br><span class="line">description: Official website for the Mastering Ansible online course</span><br><span class="line">keywords: Mastering Ansible</span><br><span class="line">author: James Spurin</span><br><span class="line">language: en</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure>
+
+<p>Changed the logo in themes/hueman/source/css/images and updated themes/hueman/_config.yml to reflect my social media settings and the new logo size -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Customize</span><br><span class="line">customize:</span><br><span class="line">    logo:</span><br><span class="line">        width: 340</span><br><span class="line">        height: 154</span><br><span class="line">        url: images&#x2F;logo-header.png</span><br><span class="line">    theme_color: &#39;#006bde&#39;</span><br><span class="line">    highlight: androidstudio</span><br><span class="line">    sidebar: left # sidebar position, options: left, right</span><br><span class="line">    thumbnail: true # enable posts thumbnail, options: true, false</span><br><span class="line">    favicon: # path to favicon</span><br><span class="line">    social_links: # for more icons, please see http:&#x2F;&#x2F;fontawesome.io&#x2F;icons&#x2F;#brand</span><br><span class="line">        linkedin: https:&#x2F;&#x2F;uk.linkedin.com&#x2F;in&#x2F;jamesspurin</span><br><span class="line">        facebook: https:&#x2F;&#x2F;www.facebook.com&#x2F;james.spurin</span><br><span class="line">        github: https:&#x2F;&#x2F;github.com&#x2F;spurin</span><br><span class="line">        twitter: https:&#x2F;&#x2F;twitter.com&#x2F;jamesspurin</span><br><span class="line">        medium: https:&#x2F;&#x2F;medium.com&#x2F;@spurin</span><br></pre></td></tr></table></figure>
+
+
+<p>If you review further in the themes/hueman/_config.yml file, there is an entry that relates to insight search.  I personally like this feature and it’s installation is pretty straight forward, the configuration makes reference to the following -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Search</span><br><span class="line">search:</span><br><span class="line">    insight: true # you need to install &#96;hexo-generator-json-content&#96; before using Insight Search</span><br><span class="line">    swiftype: # enter swiftype install key here</span><br><span class="line">    baidu: false # you need to disable other search engines to use Baidu search, options: true, false</span><br></pre></td></tr></table></figure>
+
+<p>For this, we’re going to need some additional npm requirements, fortunately, the image has been built to accomodate this.  Execute a shell, and then add the requirement to requirements.txt in the app volume.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker exec -it hexo-masteringansible.com bash</span><br><span class="line">root@b3feb661344f:&#x2F;app#</span><br><span class="line"></span><br><span class="line">$ echo hexo-generator-json-content &gt;&gt; requirements.txt</span><br><span class="line">$ exit</span><br></pre></td></tr></table></figure>
+
+<p>Restart the container, it should now, at execution, install any requirements as part of the startup process</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker restart hexo-masteringansible.com &amp;&amp; docker logs --follow hexo-masteringansible.com</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;snip&gt;</span><br><span class="line">***** App directory contains a requirements.txt file, installing npm requirements *****</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules&#x2F;fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules&#x2F;nunjucks&#x2F;node_modules&#x2F;fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules&#x2F;hexo-admin&#x2F;node_modules&#x2F;fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-generator-json-content@4.1.6</span><br><span class="line">added 6 packages from 24 contributors, removed 1 package and audited 4834 packages in 88.184s</span><br><span class="line"></span><br><span class="line">5 packages are looking for funding</span><br><span class="line">  run &#96;npm fund&#96; for details</span><br><span class="line"></span><br><span class="line">found 17 vulnerabilities (4 low, 6 moderate, 6 high, 1 critical)</span><br><span class="line">  run &#96;npm audit fix&#96; to fix them, or &#96;npm audit&#96; for details</span><br><span class="line">***** App .ssh directory exists and has content, continuing *****</span><br><span class="line">&lt;snip&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Using the admin page, I created initial posts, an about post and a purchase page .</p>
+<p>The page, for me, now looks like the following -</p>
+<p><img src="/images/pasted-36.png" alt="Mastering Ansible Homepage"></p>
+<h2 id="Using-the-SSH-Deploy-Key"><a href="#Using-the-SSH-Deploy-Key" class="headerlink" title="Using the SSH Deploy Key"></a>Using the SSH Deploy Key</h2><p>We’re going to use SSH keys to deploy our site to Github, this is conveniently done as part of the application generation and we can use the SSH key generated, i.e.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2z5BbOk241XaNTALIlcHDF57WHQTvfA+NV8T7Puw5wk0hZExIWNZt0zfqD8m1XYWUYRlQbCx1wUMGRGOCHq5NtXlzQmCiDkBULXgoofC+&#x2F;8trD0p8pwzCPW8BZ4&#x2F;agRDIExdnaMD2Wqd8VCg&#x2F;1&#x2F;Y09QM3k5roiXPy7ES4ZCp5QHCbBJ1EXWjpgfn50o5pbq64Mgnw05lsAVbFjtSHm6Th+tN0IXbUvXO0znRvDTEJ15cG7uf9pI1rstCzydK0mqYDrOyqWYk&#x2F;aroJpnoJGnbT0AKnVoo3c5IS4w1SSY33Ju6G82QMjFOrPqqQPM3dNBIQHb2crRN+VxKpLAjMojfr root@b3feb661344f</span><br></pre></td></tr></table></figure>
+
+<p>n.b. this is an example only and has not been used, outside of this tutorial, you willneed to use your own SSH key.</p>
+<h2 id="On-Github-create-a-repository-called-something-github-io"><a href="#On-Github-create-a-repository-called-something-github-io" class="headerlink" title="On Github, create a repository called something.github.io"></a>On Github, create a repository called something.github.io</h2><p>In my case, I created masteringansible.github.io -</p>
+<p><img src="/images/pasted-25.png" alt="masteringansible.github.io"></p>
+<p>Using the Github GUI, I created a simple index.html with the word ‘test’ in it.  This will easily allow you to verify that the site is working in its current form, i.e. <a href="https://masteringansible.github.io" target="_blank" rel="noopener">https://masteringansible.github.io</a></p>
+<h2 id="Configuring-a-domain-name-using-Github"><a href="#Configuring-a-domain-name-using-Github" class="headerlink" title="Configuring a domain name using Github"></a>Configuring a domain name using Github</h2><p>If you wish to host your site with a custom domain, in the project settings in the github repository, you can enable as follows -</p>
+<p><img src="/images/pasted-26.png" alt="masteringansible.github.io settings"></p>
+<p>After doing this, you’re repository will consist of 2 files, the index.html previously created and a file called CNAME, this file is important and we need to factor this into our hexo configuration later.  For now, the repository will look like the following -</p>
+<p><img src="/images/pasted-27.png" alt="masteringansible.github.io with index.html and CNAME"></p>
+<h2 id="Adding-the-Deployment-Keys-to-Github"><a href="#Adding-the-Deployment-Keys-to-Github" class="headerlink" title="Adding the Deployment Keys to Github"></a>Adding the Deployment Keys to Github</h2><p>Whilst in the repository, we can add the deployment keys that we created -</p>
+<p>In Settings, choose Deploy Keys -</p>
+<p><img src="/images/pasted-30.png" alt="Deploy Keys on left hand side"></p>
+<p>Select Add deploy key</p>
+<p><img src="/images/pasted-31.png" alt="upload successful"></p>
+<p>And paste the key we created earlier</p>
+<p><img src="/images/pasted-32.png" alt="Deploy Key"></p>
+<p>If successful, you should see something similar to this -</p>
+<p><img src="/images/pasted-35.png" alt="Deployed Keys"></p>
+<h2 id="Configuring-the-Domain-ANAME"><a href="#Configuring-the-Domain-ANAME" class="headerlink" title="Configuring the Domain ANAME"></a>Configuring the Domain ANAME</h2><p>Most modern domain name sites provide the convenience of an ANAME in the DNS configurator.</p>
+<p>Should you wish to know more about ANAME’s, see <a href="http://blog.andrewallen.co.uk/2012/06/27/cname-is-out-hello-aname/" target="_blank" rel="noopener">Andre Wallen’s blog entry</a></p>
+<p>I’m using name.com for my domain and the entry is as follows.</p>
+<p><img src="/images/pasted-28.png" alt="name.com ANAME entry for masteringansible.com"></p>
+<h2 id="Wait-for-DNS-Propagation"><a href="#Wait-for-DNS-Propagation" class="headerlink" title="Wait for DNS Propagation"></a>Wait for DNS Propagation</h2><p>DNS can take time to update, when it’s ready, you should be able to see the following using the dig command in Linux/Mac environments -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ dig masteringansible.com</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.9.7-P3 &lt;&lt;&gt;&gt; masteringansible.com</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 42137</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 512</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;masteringansible.com.		IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">masteringansible.com.	300	IN	A	185.199.109.153</span><br><span class="line">masteringansible.com.	300	IN	A	185.199.111.153</span><br><span class="line">masteringansible.com.	300	IN	A	185.199.108.153</span><br><span class="line">masteringansible.com.	300	IN	A	185.199.110.153</span><br><span class="line"></span><br><span class="line">;; Query time: 19 msec</span><br><span class="line">;; SERVER: 194.168.4.100#53(194.168.4.100)</span><br><span class="line">;; WHEN: Sat Mar 09 18:03:42 GMT 2019</span><br><span class="line">;; MSG SIZE  rcvd: 113</span><br></pre></td></tr></table></figure>
+
+<p>Or, if you’re on a Windows host, the equivalent via the <a href="https://toolbox.googleapps.com/apps/dig/#A/" target="_blank" rel="noopener">Google DNS Toolbox</a></p>
+<p><img src="/images/pasted-29.png" alt="Google DNS Toolbox"></p>
+<p>If you now browse to your domain with <a href="https://domain.com" target="_blank" rel="noopener">https://domain.com</a>, you should be presented with the word ‘test’, n.b. it can take time for github to generate https certificates so if you encounter an issue here, check settings on your github repository.</p>
+<h2 id="Configure-CNAME-in-Hexo-and-Deploy-Settings"><a href="#Configure-CNAME-in-Hexo-and-Deploy-Settings" class="headerlink" title="Configure CNAME in Hexo and Deploy Settings"></a>Configure CNAME in Hexo and Deploy Settings</h2><p>Earlier on, when we set a custom CNAME in Github, it created a file called CNAME in the repository, we need to ensure that this file is in our source on Hexo, otherwise, this will be removed during deployment, breaking the cname configuration for our site.  Create an equivalent file in the source directory -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker exec -it hexo-masteringansible.com bash</span><br><span class="line">root@b3feb661344f:&#x2F;app# echo masteringansible.com &gt; source&#x2F;CNAME</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p>Edit _config.yml and update the deployment section with your own github settings -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:spurin&#x2F;masteringansible.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: &quot;Site updated&quot;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Generating-content"><a href="#Generating-content" class="headerlink" title="Generating content"></a>Generating content</h2><p>In preparation for the launch of the site, we can request that Hexo generates the content for us</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker exec hexo-masteringansible.com hexo generate</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Files loaded in 1.87 s</span><br><span class="line">INFO  Generated: content.json</span><br><span class="line">INFO  Generated: index.html</span><br><span class="line">INFO  Generated: archives&#x2F;index.html</span><br><span class="line">INFO  Generated: archives&#x2F;2019&#x2F;03&#x2F;index.html</span><br><span class="line">INFO  Generated: archives&#x2F;2019&#x2F;index.html</span><br><span class="line">INFO  Generated: purchase&#x2F;index.html</span><br><span class="line">INFO  Generated: categories&#x2F;Purchase&#x2F;index.html</span><br><span class="line">INFO  Generated: about&#x2F;index.html</span><br><span class="line">INFO  Generated: 2019&#x2F;03&#x2F;09&#x2F;Purchase&#x2F;index.html</span><br><span class="line">INFO  Generated: 2019&#x2F;03&#x2F;09&#x2F;About-Mastering-Ansible&#x2F;index.html</span><br><span class="line">INFO  Generated: css&#x2F;images&#x2F;opacity-10.png</span><br><span class="line">INFO  Generated: css&#x2F;images&#x2F;logo-header.orig.png</span><br><span class="line">INFO  Generated: CNAME</span><br><span class="line">INFO  Generated: css&#x2F;images&#x2F;thumb-default-small.png</span><br><span class="line">INFO  Generated: css&#x2F;images&#x2F;thumb-default.png</span><br><span class="line">INFO  Generated: css&#x2F;images&#x2F;logo-header.png</span><br><span class="line">INFO  Generated: css&#x2F;images&#x2F;s-left.png</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.eot</span><br><span class="line">INFO  Generated: libs&#x2F;source-code-pro&#x2F;fonts&#x2F;mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lg-fb-comment-box.css.map</span><br><span class="line">INFO  Generated: libs&#x2F;source-code-pro&#x2F;fonts&#x2F;mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.svg</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.ttf</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;img&#x2F;loading.gif</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;img&#x2F;video-play.png</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lightgallery.css.map</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;img&#x2F;vimeo-play.png</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.woff</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lg-transitions.css.map</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr_SNRT0fZ5CX-AqRkMYgJJo.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;fonts&#x2F;7XUFZ5tgS-tD6QamInJTcSo_WB_cotcEMUw1LsIE8mM.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;img&#x2F;youtube-play.png</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr46gJz9aNFrmnwBdd69aqzY.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr9INifKjd1RJ3NxxEi9Cy2w.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;fonts&#x2F;7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr4-67659ICLY8bMrYhtePPA.woff2</span><br><span class="line">INFO  Generated: images&#x2F;pasted-0.png</span><br><span class="line">INFO  Generated: js&#x2F;main.js</span><br><span class="line">INFO  Generated: libs&#x2F;justified-gallery&#x2F;justifiedGallery.min.css</span><br><span class="line">INFO  Generated: libs&#x2F;source-code-pro&#x2F;styles.css</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.eot</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;fonts&#x2F;FontAwesome.otf</span><br><span class="line">INFO  Generated: css&#x2F;style.css</span><br><span class="line">INFO  Generated: libs&#x2F;titillium-web&#x2F;styles.css</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.woff2</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.woff</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lg-fb-comment-box.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-hash.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-autoplay.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lg-fb-comment-box.min.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-autoplay.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-fullscreen.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-pager.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-fullscreen.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-hash.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-share.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-share.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-pager.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-video.min.js</span><br><span class="line">INFO  Generated: js&#x2F;insight.js</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.ttf</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-thumbnail.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;justified-gallery&#x2F;jquery.justifiedGallery.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-video.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-zoom.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-thumbnail.js</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lg-zoom.js</span><br><span class="line">INFO  Generated: images&#x2F;pasted-3.png</span><br><span class="line">INFO  Generated: images&#x2F;pasted-4.png</span><br><span class="line">INFO  Generated: images&#x2F;pasted-2.png</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lightgallery.min.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lightgallery.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lightgallery.min.js</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;css&#x2F;font-awesome.min.css</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;css&#x2F;font-awesome.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lg-transitions.min.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;css&#x2F;lg-transitions.css</span><br><span class="line">INFO  Generated: libs&#x2F;lightgallery&#x2F;js&#x2F;lightgallery.js</span><br><span class="line">INFO  Generated: libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.svg</span><br><span class="line">INFO  Generated: libs&#x2F;jquery&#x2F;3.3.1&#x2F;jquery.min.js</span><br><span class="line">INFO  Generated: images&#x2F;pasted-1.png</span><br><span class="line">INFO  81 files generated in 3.13 s</span><br></pre></td></tr></table></figure>
+
+<h2 id="Finally-Deploy-the-site"><a href="#Finally-Deploy-the-site" class="headerlink" title="Finally, Deploy the site"></a>Finally, Deploy the site</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker exec -it hexo-masteringansible.com hexo deploy</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">[master (root-commit) 37b974f] Site updated: 2019-03-09 18:26:05</span><br><span class="line"> 81 files changed, 15456 insertions(+)</span><br><span class="line"> create mode 100644 2019&#x2F;03&#x2F;09&#x2F;About-Mastering-Ansible&#x2F;index.html</span><br><span class="line"> create mode 100644 2019&#x2F;03&#x2F;09&#x2F;Purchase&#x2F;index.html</span><br><span class="line"> create mode 100644 about&#x2F;index.html</span><br><span class="line"> create mode 100644 archives&#x2F;2019&#x2F;03&#x2F;index.html</span><br><span class="line"> create mode 100644 archives&#x2F;2019&#x2F;index.html</span><br><span class="line"> create mode 100644 archives&#x2F;index.html</span><br><span class="line"> create mode 100644 categories&#x2F;Purchase&#x2F;index.html</span><br><span class="line"> create mode 100644 content.json</span><br><span class="line"> create mode 100644 css&#x2F;images&#x2F;logo-header.orig.png</span><br><span class="line"> create mode 100644 css&#x2F;images&#x2F;logo-header.png</span><br><span class="line"> create mode 100644 css&#x2F;images&#x2F;opacity-10.png</span><br><span class="line"> create mode 100644 css&#x2F;images&#x2F;s-left.png</span><br><span class="line"> create mode 100644 css&#x2F;images&#x2F;thumb-default-small.png</span><br><span class="line"> create mode 100644 css&#x2F;images&#x2F;thumb-default.png</span><br><span class="line"> create mode 100644 css&#x2F;style.css</span><br><span class="line"> create mode 100644 CNAME</span><br><span class="line"> create mode 100644 images&#x2F;pasted-0.png</span><br><span class="line"> create mode 100644 images&#x2F;pasted-1.png</span><br><span class="line"> create mode 100644 images&#x2F;pasted-2.png</span><br><span class="line"> create mode 100644 images&#x2F;pasted-3.png</span><br><span class="line"> create mode 100644 images&#x2F;pasted-4.png</span><br><span class="line"> create mode 100644 index.html</span><br><span class="line"> create mode 100644 js&#x2F;insight.js</span><br><span class="line"> create mode 100644 js&#x2F;main.js</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;css&#x2F;font-awesome.css</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;css&#x2F;font-awesome.min.css</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;fonts&#x2F;FontAwesome.otf</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.eot</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.svg</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.ttf</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.woff</span><br><span class="line"> create mode 100644 libs&#x2F;font-awesome&#x2F;fonts&#x2F;fontawesome-webfont.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;jquery&#x2F;3.3.1&#x2F;jquery.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;justified-gallery&#x2F;jquery.justifiedGallery.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;justified-gallery&#x2F;justifiedGallery.min.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lg-fb-comment-box.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lg-fb-comment-box.css.map</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lg-fb-comment-box.min.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lg-transitions.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lg-transitions.css.map</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lg-transitions.min.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lightgallery.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lightgallery.css.map</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;css&#x2F;lightgallery.min.css</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.eot</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.svg</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.ttf</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;fonts&#x2F;lg.woff</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;img&#x2F;loading.gif</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;img&#x2F;video-play.png</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;img&#x2F;vimeo-play.png</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;img&#x2F;youtube-play.png</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-autoplay.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-autoplay.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-fullscreen.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-fullscreen.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-hash.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-hash.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-pager.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-pager.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-share.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-share.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-thumbnail.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-thumbnail.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-video.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-video.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-zoom.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lg-zoom.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lightgallery.js</span><br><span class="line"> create mode 100644 libs&#x2F;lightgallery&#x2F;js&#x2F;lightgallery.min.js</span><br><span class="line"> create mode 100644 libs&#x2F;source-code-pro&#x2F;fonts&#x2F;mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;source-code-pro&#x2F;fonts&#x2F;mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;source-code-pro&#x2F;styles.css</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;fonts&#x2F;7XUFZ5tgS-tD6QamInJTcSo_WB_cotcEMUw1LsIE8mM.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;fonts&#x2F;7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr4-67659ICLY8bMrYhtePPA.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr46gJz9aNFrmnwBdd69aqzY.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr9INifKjd1RJ3NxxEi9Cy2w.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;fonts&#x2F;anMUvcNT0H1YN4FII8wpr_SNRT0fZ5CX-AqRkMYgJJo.woff2</span><br><span class="line"> create mode 100644 libs&#x2F;titillium-web&#x2F;styles.css</span><br><span class="line"> create mode 100644 purchase&#x2F;index.html</span><br><span class="line">The authenticity of host &#39;github.com (192.30.253.113)&#39; can&#39;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span><br><span class="line">Are you sure you want to continue connecting (yes&#x2F;no)? yes</span><br><span class="line">Warning: Permanently added &#39;github.com,192.30.253.113&#39; (RSA) to the list of known hosts.</span><br><span class="line">Counting objects: 114, done.</span><br><span class="line">Delta compression using up to 2 threads.</span><br><span class="line">Compressing objects: 100% (103&#x2F;103), done.</span><br><span class="line">Writing objects: 100% (114&#x2F;114), 2.00 MiB | 869.00 KiB&#x2F;s, done.</span><br><span class="line">Total 114 (delta 11), reused 0 (delta 0)</span><br><span class="line">remote: Resolving deltas: 100% (11&#x2F;11), done.</span><br><span class="line">To github.com:spurin&#x2F;masteringansible.github.io.git</span><br><span class="line"> + d3fe1f1...37b974f HEAD -&gt; master (forced update)</span><br><span class="line">Branch master set up to track remote branch master from git@github.com:spurin&#x2F;masteringansible.github.io.git.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+
+<p>At this point, you should be able to successfully navigate to your site with <a href="https://domain.com" target="_blank" rel="noopener">https://domain.com</a> and if so, give yourself a pat on the back :-)</p>
+<h2 id="Future-Changes"><a href="#Future-Changes" class="headerlink" title="Future Changes"></a>Future Changes</h2><p>From this point forward, you can quite simply use the local Hexo-Admin interface for updates, and when ready, push changes to your live site with a one liner as follows -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker exec hexo-masteringansible.com bash -c &#39;hexo generate &amp;&amp; hexo deploy&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Saving-your-current-image-and-future-images"><a href="#Saving-your-current-image-and-future-images" class="headerlink" title="Saving your current image, and future images"></a>Saving your current image, and future images</h2><p>Whilst the docker containers in use here, should be able to be created and recreated as needed alongside the persistent application data, there is a risk that a future version of Hexo, may indeed break the execution process (after all Hexo and the supporting libraries are constantly evolving).</p>
+<p>If you have a working container image, I recommend, taking a point in time copy, allowing you if required, to load that precise image at a future date.</p>
+<p>All of the changes that you’ve made to the Docker image that involved command execution outside of /app, would have resulted in additional layers to that of the original spurin/hexo(-domain.com) images that you’ve been working on.</p>
+<p>Whilst our /app data is safe inside it’s own volume, we may wish to save the current state of our running image.</p>
+<p>Commit the current container state as am image, using YYYYMMDD as the reference -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker commit hexo-masteringansible.com spurin&#x2F;hexo-masteringansible.com:20200103</span><br><span class="line">sha256:4ee249ff19ba1d7e6edcef83705543a458fb1a52ffa7219fc5f2d6b038e6cb1f</span><br></pre></td></tr></table></figure>
+
+<p>And save the new image to a file -</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ docker save spurin&#x2F;hexo-masteringansible.com:20200103 &gt; spurin_hexo-masteringansible.com_20200103.tar</span><br></pre></td></tr></table></figure>
+
+<p>In a worst case scenario, you can now load this image, and recreate your container to get it back to a known point in time.</p>
+<h2 id="Closing-remarks"><a href="#Closing-remarks" class="headerlink" title="Closing remarks"></a>Closing remarks</h2><p>This post, summarises different technologies with a desired outcome of a working site/blog.  Hopefully by the end of it, you’ve got a working site and/or have learnt something new.  Comments and feedback are very welcome.  Thanks - James Spurin</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://spurin.com/2020/01/04/Creating-a-Blog-Website-with-Docker-Hexo-Github-Free-Hosting-and-HTTPS/" data-id="ckbum3rm400020tno1ia02om2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "James Spurin"
+        },
+        "headline": "Creating a Blog/Website with Docker, Hexo &amp; Github, Free Hosting and HTTPS",
+        "image": "http://spurin.com/images/pasted-37.png",
+        "keywords": "Blogging Hexo Docker Github Blog Hosting HTTPS Website",
+        "genre": "",
+        "datePublished": "2020-01-04",
+        "dateCreated": "2020-01-04",
+        "dateModified": "2020-01-04",
+        "url": "http://spurin.com/2020/01/04/Creating-a-Blog-Website-with-Docker-Hexo-Github-Free-Hosting-and-HTTPS/",
+        "description": "
+Updated for 2020.  People often like to start a new year or even a new decade with a venture, blogging being particularly popular. I’ve updated this article originally written in 2019.
+The supporting"
+        "wordCount": 4137
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>Let's Connect:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/jamesspurin" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://uk.linkedin.com/in/jamesspurin" target="_blank" rel="noopener">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/spurin" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/james.spurin" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/06/16/Getting-started-with-Cassandra-Quickly/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Getting started with Apache Cassandra, Quickly
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/20/Ansible-London-Meetup-19th-March-2019/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Ansible London Meetup 19th March 2019</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                <div class="widget-wrap">
+<h3 class="widgettitle widget-title">Author</h3>
+<p><span class="alignleft"><img class="avatar avatar-125 photo jetpack-lazy-image jetpack-lazy-image--handled" width="64" height="64" src="/images/James300.png" data-lazy-loaded="1" scale="0" style="border-radius: 50%; margin-right: 10px;margin-top: 10px; 
+    float: left;"><noscript><img class="avatar avatar-125 photo" width="64" height="64" src="images/James300.png" style="border-radius: 50%;
+    float: left;"></noscript></span>James Spurin is an Engineer focusing on Automation, Containers and Software Development, he is the Author of the best selling <a href="https://masteringansible.com/about/index.html" target="_blank" rel="noopener">Mastering Ansible</a> video course by Packt Publishing. He holds both the CNCF Kubernetes <a href="https://www.youracclaim.com/badges/eecb16d4-4d53-4242-a045-c8d609458524" target="_blank" rel="noopener">CKA</a> and <a href="https://www.youracclaim.com/earner/earned/badge/da927278-c61b-49aa-888e-d13273297481" target="_blank" rel="noopener">CKAD</a> qualifications.  An advocate for open source software and developer of the Python library <a href="https://xmldataset.readthedocs.io/en/latest/" target="_blank" rel="noopener">xmldataset</a>, featured on the Awesome Python list.  Creator and maintainer of the most popular Hexo docker image on <a href="https://hub.docker.com/r/spurin/hexo" target="_blank" rel="noopener">Docker Hub</a>.  Working within Cloud Engineering in Nomura on the development of a Private Cloud and maintaining an extensive API Development framework written in Python.<br><br>He has a gait affecting disability known as HSP.  Outside of technology, he spends his time supporting others with the same disability and its similar counterpart (Cerebral Palsy), he is a promoter of a revolutionary surgical treatment (in which he's the 22nd person ever to have it for HSP) known as <a href="https://sdrchangeslives.net/general-faq/" target="_blank" rel="noopener">SDR (Selective Dorsal Rhizotomy)</a>.</p>
+</div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/06/25/Python-Inter-Process-Communication/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pasted-79.png)" alt="Python IPC (Inter Process Communication)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/06/25/Python-Inter-Process-Communication/" class="title">Python IPC (Inter Process Communication)</a></p>
+                            <p class="item-date"><time datetime="2020-06-25T20:39:51.000Z" itemprop="datePublished">2020-06-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/06/22/CentOS-added-to-Lab-Web-Terminal-Images/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pasted-75.png)" alt="CentOS added to Lab Docker Images with Web Terminal" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/06/22/CentOS-added-to-Lab-Web-Terminal-Images/" class="title">CentOS added to Lab Docker Images with Web Terminal</a></p>
+                            <p class="item-date"><time datetime="2020-06-22T20:58:34.000Z" itemprop="datePublished">2020-06-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/06/21/Ubuntu-Lab-Docker-Images-with-Web-Terminal/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pasted-74.png)" alt="Ubuntu Lab Docker Images with Web Terminal" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/06/21/Ubuntu-Lab-Docker-Images-with-Web-Terminal/" class="title">Ubuntu Lab Docker Images with Web Terminal</a></p>
+                            <p class="item-date"><time datetime="2020-06-21T17:25:34.000Z" itemprop="datePublished">2020-06-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/06/17/Unexpected-Fans-with-OpenSource-Software/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pasted-72.png)" alt="Unexpected Fans with OpenSource Software" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/06/17/Unexpected-Fans-with-OpenSource-Software/" class="title">Unexpected Fans with OpenSource Software</a></p>
+                            <p class="item-date"><time datetime="2020-06-17T17:27:06.000Z" itemprop="datePublished">2020-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/06/16/Getting-started-with-Cassandra-Quickly/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pasted-70.png)" alt="Getting started with Apache Cassandra, Quickly" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/06/16/Getting-started-with-Cassandra-Quickly/" class="title">Getting started with Apache Cassandra, Quickly</a></p>
+                            <p class="item-date"><time datetime="2020-06-16T23:15:32.000Z" itemprop="datePublished">2020-06-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ansible/" rel="tag">Ansible</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disability/" rel="tag">Disability</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HSP/" rel="tag">HSP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/" rel="tag">HTTPS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hosting/" rel="tag">Hosting</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-2/" rel="tag">Python 2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-3/" rel="tag">Python 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDR/" rel="tag">SDR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tutorial/" rel="tag">Tutorial</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Environments/" rel="tag">Virtual Environments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Website/" rel="tag">Website</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Ansible/" style="font-size: 10px;">Ansible</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Blogging/" style="font-size: 10px;">Blogging</a> <a href="/tags/Disability/" style="font-size: 10px;">Disability</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HSP/" style="font-size: 10px;">HSP</a> <a href="/tags/HTTPS/" style="font-size: 10px;">HTTPS</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hosting/" style="font-size: 10px;">Hosting</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Python-2/" style="font-size: 10px;">Python 2</a> <a href="/tags/Python-3/" style="font-size: 10px;">Python 3</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tags/Virtual-Environments/" style="font-size: 10px;">Virtual Environments</a> <a href="/tags/Website/" style="font-size: 10px;">Website</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 James Spurin</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'spurin';
+    
+    
+    var disqus_url = 'http://spurin.com/2020/01/04/Creating-a-Blog-Website-with-Docker-Hexo-Github-Free-Hosting-and-HTTPS/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
